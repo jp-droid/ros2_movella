@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./movella_pkg/movella_pkg/examples/xdpcsdk/python"
+    ]
+}

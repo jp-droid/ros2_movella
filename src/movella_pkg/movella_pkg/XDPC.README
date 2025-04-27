@@ -1,0 +1,37 @@
+=[ XDPCSDK For Linux ]============================================================
+
+Prerequisites:
+	- A compiler (gcc, clang)
+	- make
+	- libcholmod3
+	- libumfpack5
+
+-[ Shared Object Examples ]-----------------------------------------------------
+
+Building:
+	To build the examples enter the /examples/xdpcsdk directory and run:
+
+		make
+
+	This will create the example binaries in /examples/xdpcsdk/cpp
+
+-[ Troubleshooting ]------------------------------------------------------------
+
+
+-[ Known Issues ]---------------------------------------------------------------
+
+	* On Red Hat, and Red Hat derived systems (like Fedora) the
+	installation directory of the shared object (/usr/local/lib) is usually
+	not included in the /etc/ld.so.conf file by default. This will result in
+	that dynamic linker is not able to find the XDA library after a system-wide
+	installation.
+
+	To overcome this you could change the installation directories by changing
+	the LIBDEST and INCLUDEDEST variables (see above) to something ldconfig
+	does search for, or add /usr/local/lib to the /etc/ld.so.conf file and
+	run ldconfig (as admin)
+
+	* The shared object file requires version 3.4.15 or higher of libstdc++.
+	Most current Linux distributions support this but we are aware of a problem
+	with Debian "squeeze" (the stable release) which uses 3.4.13. Currently
+	we have no specific work-around for this

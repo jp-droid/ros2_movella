@@ -1,0 +1,4 @@
+[console_scripts]
+my_node = movella_pkg.my_node:main
+publisher_node_test = movella_pkg.publisher_node_test:main
+
